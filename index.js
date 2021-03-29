@@ -21,6 +21,11 @@ client.connect(err => {
     const ordersCollection = client.db("EmaJohnStore").collection("orders");
 
 
+    app.get('/', (req, res) => {
+        res.send('hello its working');
+    })
+
+
     app.post('/addProduct', (req, res) => {
         const products = req.body;
         productsCollection.insertOne(products)
